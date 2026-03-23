@@ -1,0 +1,19 @@
+# Credenciales de base de datos
+src/java/com/sofinventory/utils/Conexion.java
+
+# Archivos compilados
+build/
+dist/
+*.class
+
+# Archivos privados de NetBeans
+nbproject/private/
+nbbuild/
+nbdist/
+
+# Librerías externas (cada quien descarga las suyas)
+web/WEB-INF/lib/
+
+# Sistema operativo
+Thumbs.db
+.DS_Store

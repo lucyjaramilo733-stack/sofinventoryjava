@@ -1,0 +1,277 @@
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --primario:    #2563eb;
+    --primario-h:  #1d4ed8;
+    --peligro:     #dc2626;
+    --peligro-h:   #b91c1c;
+    --exito:       #16a34a;
+    --fondo:       #f1f5f9;
+    --superficie:  #ffffff;
+    --borde:       #e2e8f0;
+    --texto:       #1e293b;
+    --texto-suave: #64748b;
+    --radio:       8px;
+    --sombra:      0 1px 3px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.06);
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ── Navbar ───────────────────────────────────────────────── */
+.navbar {
+    background: var(--primario);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+.navbar-marca {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar-links a {
+    color: rgba(255,255,255,.85);
+    text-decoration: none;
+    font-size: .9rem;
+    padding: .3rem .6rem;
+    border-radius: var(--radio);
+    transition: background .15s;
+}
+
+.navbar-links a:hover,
+.navbar-links a.activo {
+    color: #fff;
+    background: rgba(255,255,255,.2);
+}
+
+.navbar-usuario {
+    font-size: .85rem;
+    color: rgba(255,255,255,.75);
+}
+
+/* ── Contenedor principal ─────────────────────────────────── */
+.contenedor {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.card {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 1.5rem;
+    box-shadow: var(--sombra);
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: var(--texto);
+    padding-bottom: .75rem;
+    border-bottom: 1px solid var(--borde);
+}
+
+/* ── Formulario grid ──────────────────────────────────────── */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.campo { display: flex; flex-direction: column; gap: .35rem; }
+.campo-ancho { grid-column: 1 / -1; }
+
+.campo label {
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+    letter-spacing: .4px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    padding: .55rem .75rem;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    font-size: .95rem;
+    color: var(--texto);
+    background: var(--superficie);
+    transition: border-color .15s, box-shadow .15s;
+    width: 100%;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--primario);
+    box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+.campo textarea { resize: vertical; min-height: 72px; }
+
+.form-acciones {
+    display: flex;
+    gap: .75rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--borde);
+}
+
+/* ── Botones ──────────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .55rem 1.25rem;
+    border: none;
+    border-radius: var(--radio);
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .15s, transform .1s;
+}
+
+.btn:active { transform: scale(.97); }
+
+.btn-primario  { background: var(--primario);  color: #fff; }
+.btn-primario:hover { background: var(--primario-h); }
+
+.btn-secundario { background: var(--borde); color: var(--texto); }
+.btn-secundario:hover { background: #cbd5e1; }
+
+.btn-bloque { width: 100%; }
+
+.btn-sm { padding: .3rem .7rem; font-size: .8rem; }
+.btn-editar  { background: #dbeafe; color: #1d4ed8; }
+.btn-editar:hover  { background: #bfdbfe; }
+.btn-eliminar { background: #fee2e2; color: var(--peligro); }
+.btn-eliminar:hover { background: #fecaca; }
+
+/* ── Tabla ────────────────────────────────────────────────── */
+.tabla-responsive { overflow-x: auto; }
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9rem;
+}
+
+.tabla thead {
+    background: var(--fondo);
+}
+
+.tabla th {
+    text-align: left;
+    padding: .7rem 1rem;
+    font-size: .78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--texto-suave);
+    border-bottom: 2px solid var(--borde);
+}
+
+.tabla td {
+    padding: .75rem 1rem;
+    border-bottom: 1px solid var(--borde);
+    vertical-align: middle;
+}
+
+.tabla tbody tr:hover { background: #f8fafc; }
+
+.acciones { display: flex; gap: .4rem; }
+
+/* ── Badges ───────────────────────────────────────────────── */
+.badge {
+    display: inline-block;
+    padding: .2rem .6rem;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 600;
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.badge-activo   { background: #dcfce7; color: #15803d; }
+.badge-inactivo { background: #f1f5f9; color: #64748b; }
+.badge-bloqueado{ background: #fee2e2; color: #b91c1c; }
+
+/* ── Alertas ──────────────────────────────────────────────── */
+.alerta {
+    padding: .75rem 1rem;
+    border-radius: var(--radio);
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.alerta-ok    { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+.alerta-error { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+
+/* ── Login page ───────────────────────────────────────────── */
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+}
+
+.login-container {
+    background: var(--superficie);
+    border-radius: 12px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.25);
+}
+
+.login-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-logo h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primario);
+}
+
+.login-logo p {
+    color: var(--texto-suave);
+    font-size: .9rem;
+    margin-top: .25rem;
+}
+
+.login-form { display: flex; flex-direction: column; gap: 1rem; }
