@@ -8,7 +8,7 @@ como parte de la actividad **GA7-220501096-AA2** del SENA.
 
 ## Tecnologías utilizadas
 
-- Java 24
+- Java 25
 - Jakarta Servlets (Jakarta EE 10)
 - JSP (Java Server Pages)
 - Apache Tomcat 10.1
@@ -23,8 +23,8 @@ como parte de la actividad **GA7-220501096-AA2** del SENA.
 | Módulo | Descripción | Desarrollado por |
 |---|---|---|
 | Login | Autenticación de usuarios | Ambas |
-| Usuarios | CRUD completo de usuarios del sistema | Alejo |
-| Proveedores | CRUD completo de proveedores | Compañera |
+| Usuarios | CRUD completo de usuarios del sistema | Alejandro Sepúlveda Duarte|
+| Proveedores | CRUD completo de proveedores | Lucy Estefany Izquierdo Jaramillo|
 
 ---
 
@@ -41,7 +41,7 @@ entre los dos formularios.
 
 - Java 17 o superior
 - Apache Tomcat 10.1
-- PostgreSQL con puerto 5433
+- PostgreSQL con puerto 5432
 - NetBeans IDE 25 o superior
 
 ### Librerías necesarias (agregar en WEB-INF/lib/)
